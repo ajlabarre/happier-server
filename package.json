@@ -1,6 +1,6 @@
 {
   "name": "happier-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Abstracts all the code involved in writing a Hapi server from scratch",
   "keywords": [
     "hapi",
