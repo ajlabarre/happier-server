@@ -1,0 +1,30 @@
+#!/usr/bin/env node
+
+(async () => {
+    const HttpServer = require('../source').Server.HttpServer;
+    const logger = require('node-logger').createLogger()
+
+    const httpServer = new HttpServer({
+        port: process.env.PORT || 9000,
+        routes: [{
+            method: 'GET',
+            path: '/_status',
+            config: {
+              tags: ['api'],
+              description: 'Retrieves information about the health of the API'
+            },
+            handler: async (request, h) => {
+              return 200
+            }
+          }
+        ],
+        logger,
+        swagger: {
+          title: 'A title for your documentation',
+          disabled: true,
+          includeAuth: true
+        }
+      })
+
+    await httpServer.start();
+})();
