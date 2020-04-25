@@ -1,7 +1,23 @@
 {
   "name": "happier-server",
-  "version": "1.1.1",
   "description": "Abstracts all the code involved in writing a Hapi server from scratch",
+  "author": "AJ LaBarre",
+  "version": "1.1.2",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start-local": "nodemon ./bin/http"
+  },
+  "dependencies": {
+    "hapi": "18.1.0",
+    "inert": "5.1.3",
+    "joi": "14.3.1",
+    "vision": "5.4.4"
+  },
+  "devDependencies": {
+    "node-logger": "0.0.1",
+    "nodemon": "2.0.3"
+  },
   "keywords": [
     "hapi",
     "hapijs",
@@ -13,28 +29,12 @@
     "server",
     "helper"
   ],
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/ajlabarre/happier-server.git"
   },
-  "author": "AJ LaBarre",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ajlabarre/happier-server/issues"
   },
-  "homepage": "https://github.com/ajlabarre/happier-server#README",
-  "dependencies": {
-    "hapi": "18.1.0",
-    "inert": "5.1.3",
-    "joi": "14.3.1",
-    "vision": "5.4.4"
-  },
-  "scripts": {
-    "start-local": "nodemon ./bin/http"
-  },
-  "devDependencies": {
-    "node-logger": "0.0.1",
-    "nodemon": "^2.0.3"
-  }
+  "homepage": "https://github.com/ajlabarre/happier-server#README"
 }
