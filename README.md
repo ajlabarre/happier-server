@@ -1,9 +1,10 @@
 # happier-server
 
-Abstracts all the code involved in writing a Hapi server from scratch. All you have to do is include the happier-server module, instantiate the HttpServer with a simple confiuration object, then start!
+> This module abstracts all the code involved in writing a Hapi server from scratch. Include the module, instantiate with your config and done.
+[![NPM](https://img.shields.io/npm/v/react-eternal-list.svg)](https://www.npmjs.com/package/react-eternal-list) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Requirements
-* node >=12
+* node >=8.10
 
 ## Installation
 ```
@@ -35,4 +36,5 @@ npm i --save happier-server
 If you would like to contribute to this project, open a PR!
     
 ## Copyright
-Copyright © 2019 AJ LaBarre, all rights reserved.
+
+MIT © [ajlabarre](https://github.com/ajlabarre)
