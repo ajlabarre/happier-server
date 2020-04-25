@@ -31,7 +31,7 @@
     "vision": "5.4.4"
   },
   "scripts": {
-    "start-local": "./bin/http"
+    "start-local": "nodemon ./bin/http"
   },
   "devDependencies": {
     "node-logger": "0.0.1",
