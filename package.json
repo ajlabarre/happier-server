@@ -1,0 +1,33 @@
+{
+  "name": "happier-server",
+  "version": "1.0.0",
+  "description": "Abstracts all the code involved in writing a Hapi server from scratch",
+  "keywords": [
+    "hapi",
+    "hapijs",
+    "boilerplate",
+    "node",
+    "nodejs",
+    "happier",
+    "happier-server",
+    "server",
+    "helper"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ajlabarre/happier-server.git"
+  },
+  "author": "AJ LaBarre",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ajlabarre/happier-server/issues"
+  },
+  "homepage": "https://github.com/ajlabarre/happier-server#README",
+  "dependencies": {
+    "hapi": "18.1.0",
+    "inert": "5.1.3",
+    "joi": "14.3.1",
+    "vision": "5.4.4"
+  }
+}
