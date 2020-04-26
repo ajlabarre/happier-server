@@ -13,25 +13,52 @@ npm i --save happier-server
 ```
 
 ## Usage
-    const HttpServer = require('happier-server').Server.HttpServer;
+Include the module
+```
+const HttpServer = require('happier-server').Server.HttpServer
+```
 
-    const httpServer = new HttpServer({
-        port: 8080 // Whichever port you want the server to run on
-        routes: [/* hapi v18 routes */],
-        logger, // used for error reporting and status updates outside of request logging
-        swagger: {  // optional
-            title: 'A title for your documentation'
-            pathPrefix: 'A prefix for your documentation routes (e.g. /v1)',
-            disabled: false, // optional, default false
-            includeAuth: true // optional, default true.  Displays a field in the header for entering your jwt token
+Create a new Hapi server instance by providing a simple config object
+```
+const httpServer = new HttpServer({
+    port: 8080 // Whichever port you want the server to run on
+    routes: [/* Hapi v18 routes. See below for example */],
+    logger, // used for error reporting and status updates outside of request logging
+    swagger: {  // optional
+        title: 'A title for your documentation'
+        pathPrefix: 'A prefix for your documentation routes (e.g. /v1)',
+        disabled: false, // optional, default false
+        includeAuth: true // optional, default true.  Displays a field in the header for entering your jwt token
         }
     });
+```
 
-    // To start
-    await httpServer.start();
+To start the server
+```
+await httpServer.start()
+```
     
-    // To Stop
-    await httpServer.stop();
+To stop the server
+```
+await httpServer.stop();
+```
+
+### Hapi v18 route example
+```
+module.exports = [
+    {
+        method: 'GET',
+        path: '/_status',
+        config: {
+          tags: ['api'],
+          description: 'Retrieves information about the health of the API'
+        },
+        handler: async (request, h) => {
+          return 200
+        }
+    }
+]
+```
 
 ## Local Development
 Use the following to directly run happier-server locally
