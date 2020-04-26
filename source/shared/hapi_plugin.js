@@ -46,7 +46,9 @@ class HapiPlugin {
   static get optionsSchema () {
     return {
       routes: Joi.array().items(Joi.object()).required().min(1).description('List of all the Hapi routes that should be available on the server'),
-      swagger: Swagger.optionsSchema.default(() => { return {} }, 'Default configuration')
+      swagger: Swagger.optionsSchema.default(() => { return {} }, 'Default configuration'),
+      port: Joi.number().optional(),
+      logger: Joi.optional()
     }
   }
 

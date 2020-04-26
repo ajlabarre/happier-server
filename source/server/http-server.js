@@ -17,9 +17,6 @@ class HttpServer {
     this.port = this.options.port
     this.keepAliveTimeout = this.options.keepAliveTimeout
     this.logger = this.options.logger
-    delete this.options.port
-    delete this.options.keepAliveTimeout
-    delete this.options.logger
     this.server = null
   }
 
@@ -33,7 +30,7 @@ class HttpServer {
         hapiPlugin.defaultHapiOptions,
         {
           port: this.port,
-          compression: false // let api gateway/cloudfront/akamai deal with compression if we want it
+          compression: false // Let api gateway/cloudfront/akamai deal with compression if needed.
         }
       )
     )
@@ -44,10 +41,6 @@ class HttpServer {
     await this.server.start()
 
     console.info(`HTTP server started at ${this.server.info.uri}`)
-  }
-
-  inject (options) {
-    return this.server.inject(options)
   }
 
   async stop () {
