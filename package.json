@@ -2,7 +2,7 @@
   "name": "happier-server",
   "description": "Abstracts all the code involved in writing a Hapi server from scratch",
   "author": "AJ LaBarre",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
