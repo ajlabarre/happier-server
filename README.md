@@ -2,6 +2,8 @@
 
 > This module abstracts all the code involved in writing a Hapi server from scratch. Include the module, instantiate with your config and done.
 
+Use this simple module to easily create a v18 Hapi Server!
+
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Requirements
