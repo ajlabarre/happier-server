@@ -14,9 +14,8 @@ class HttpServer {
     }
 
     this.options = options
-    this.port = this.options.port
+    this.port = this.options.port || 8080
     this.keepAliveTimeout = this.options.keepAliveTimeout
-    this.logger = this.options.logger
     this.server = null
   }
 

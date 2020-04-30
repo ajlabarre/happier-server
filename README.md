@@ -1,8 +1,6 @@
 # happier-server
 
-> This module abstracts all the code involved in writing a Hapi server from scratch. Include the module, instantiate with your config and done.
-
-Use this simple module to easily create a v18 Hapi Server!
+> Lightweight module which abstracts Hapi server boilerplate cpde
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -23,7 +21,7 @@ const HttpServer = require('happier-server').Server.HttpServer
 Create a new Hapi server instance by providing a simple config object
 ```
 const httpServer = new HttpServer({
-    port: 8080 // Whichever port you want the server to run on
+    port: 8080 // The port you want the server to use. Will default to port 8080
     routes: [/* Hapi v18 routes. See below for example */],
     logger, // used for error reporting and status updates outside of request logging
     swagger: {  // optional
@@ -52,7 +50,7 @@ module.exports = [
         method: 'GET',
         path: '/_status',
         config: {
-          tags: ['api'],
+          tags: ['api'], // Include the api tag to have the route included in swagger
           description: 'Retrieves information about the health of the API'
         },
         handler: async (request, h) => {
@@ -63,7 +61,7 @@ module.exports = [
 ```
 
 ## Local Development
-Use the following to directly run happier-server locally
+If you would like to run happier-server in isolation, use the following
 
 ```
 cd happier-server/
