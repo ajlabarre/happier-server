@@ -1,6 +1,6 @@
 # happier-server
 
-> This module abstracts all the code involved in writing a Hapi server from scratch. Include the module, instantiate with your config and done.
+> This module abstracts all the code involved in writing a Hapi server from scratch. Include the module, instantiate with your config and start!
 
 Use this simple module to easily create a v18 Hapi Server!
 
@@ -15,18 +15,18 @@ npm i --save happier-server
 ```
 
 ## Usage
-Include the module
+#### Include the module
 ```
 const HttpServer = require('happier-server').Server.HttpServer
 ```
 
-Create a new Hapi server instance by providing a simple config object
+#### Create a new Hapi server instance by providing a simple config object
 ```
 const httpServer = new HttpServer({
-    port: 8080 // Whichever port you want the server to run on
+    port: process.env.PORT
     routes: [/* Hapi v18 routes. See below for example */],
-    logger, // used for error reporting and status updates outside of request logging
-    swagger: {  // optional
+    logger,
+    swagger: {
         title: 'A title for your documentation'
         pathPrefix: 'A prefix for your documentation routes (e.g. /v1)',
         disabled: false, // optional, default false
@@ -35,12 +35,18 @@ const httpServer = new HttpServer({
     });
 ```
 
-To start the server
+##### Server configuration object
+- port (required) - Whichever port you want the server to run on
+- routes (required) - An Array of v18 routes (see blow for example)
+- logger (required) - used for error reporting and status updates outside of request logging. You can simply pass NodeJS console object or any other logger you want.
+- swagger (optional) - API documentation tool
+
+#### To start the server
 ```
 await httpServer.start()
 ```
     
-To stop the server
+#### To stop the server
 ```
 await httpServer.stop();
 ```
