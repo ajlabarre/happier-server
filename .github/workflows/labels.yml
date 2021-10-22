@@ -6,7 +6,7 @@ on:
 
 jobs:
   label-required:
-    runs-on: [ubuntu-latest]
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/github-script@v3
