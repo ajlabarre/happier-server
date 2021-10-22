@@ -8,11 +8,11 @@ on:
 
 jobs:
   label-required:
+    name: Label Required
+    if: ${{ github.event.pull_request.labels.length == 0 }}
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/github-script@v5
-        if: ${{ github.event.pull_request.labels.length == 0 }}
         with:
           script: |
             core.setFailed('Label required, failing workflow')
