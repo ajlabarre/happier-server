@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      uses: actions/github-script@v3
-      - if: ${{ !github.event.label.name }}
+      uses: actions/github-script@v5
+      if: ${{ !github.event.label.name }}
         with:
           script: |
             core.setFailed('PR must have label')
