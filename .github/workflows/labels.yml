@@ -9,8 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check for labels
       uses: actions/github-script@v5
-      if: ${{ !github.event.label.name }}
-      with:
-        script: |
-          core.setFailed('PR must have label')
+      if: ${{ !github.event.pull_request.labels.length }}
+        with:
+          script: |
+            core.setFailed('PR must have label')
