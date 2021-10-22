@@ -19,8 +19,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/github-script@v5
-        if: ${{ !github.event.pull_request.labels.length }}
-        run: echo "Label length is ${{ github.event.pull_request.labels.length }}"
+        if: ${{ github.event.pull_request.labels.length == 0 }}
         with:
           script: |
             core.setFailed('Label required, failing workflow')
