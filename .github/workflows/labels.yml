@@ -6,11 +6,11 @@ on:
 
 jobs:
   label-required:
-    runs-on: ubuntu-latest
+    runs-on: [ubuntu-latest]
 
     steps:
-      - name: Check for labels
       uses: actions/github-script@v5
+      - name: Check for labels
       if: ${{ !github.event.pull_request.labels.length }}
         with:
           script: |
