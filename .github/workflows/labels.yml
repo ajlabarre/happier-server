@@ -10,6 +10,8 @@ jobs:
 
     steps:
       - uses: actions/github-script@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
       - name: Check for labels
       if: ${{ !github.event.pull_request.labels.length }}
         with:
