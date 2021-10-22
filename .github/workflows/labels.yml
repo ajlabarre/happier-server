@@ -13,7 +13,7 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
-      - name: Check for labels
+      name: Check for labels
       if: ${{ !github.event.pull_request.labels.length }}
       with:
         script: |
