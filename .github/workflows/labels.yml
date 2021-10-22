@@ -11,6 +11,6 @@ jobs:
     steps:
       uses: actions/github-script@v5
       if: ${{ !github.event.label.name }}
-        with:
-          script: |
-            core.setFailed('PR must have label')
+      with:
+        script: |
+          core.setFailed('PR must have label')
