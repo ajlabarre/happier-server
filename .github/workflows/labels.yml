@@ -1,0 +1,16 @@
+name: Label Required
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  label-required:
+    runs-on: [ubuntu-latest]
+
+    steps:
+      - uses: actions/github-script@v3
+      if: ${{ !github.event.label.name }}
+        with:
+          script: |
+            core.setFailed('PR must have label')
