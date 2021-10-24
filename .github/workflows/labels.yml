@@ -22,6 +22,6 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/github-script@v5
-        with:
+        run:
           script: |
             core.setFailed('Label required, failing workflow')
