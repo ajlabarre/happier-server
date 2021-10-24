@@ -20,7 +20,4 @@ jobs:
     if: ${{ github.event.pull_request.labels.length == 0 }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/github-script@v5
-        with:
-          script: |
-            core.setFailed('Label required, failing workflow')
+      run: failure()
