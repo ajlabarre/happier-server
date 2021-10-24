@@ -20,4 +20,4 @@ jobs:
     if: ${{ github.event.pull_request.labels.length == 0 }}
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      run: failure()
+      - run: failure()
