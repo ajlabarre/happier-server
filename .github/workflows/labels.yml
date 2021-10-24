@@ -10,7 +10,6 @@ jobs:
     name: Label Required
     runs-on: ubuntu-latest
     steps:
-      - name: Check for labels
       if: ${{ github.event.pull_request.labels.length == 0 }}
       uses: actions/github-script@v5
         with:
