@@ -30,13 +30,5 @@ jobs:
       - name: Run label checks
         if: steps.getLength.outputs.Label_length == 0
         run: |
-          echo steps.getLength.outputs.Label_length == 0
+          echo lengthhh $LL
           core.setFailed('Label required, failing workflow')
-
-
-      # # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      # - if: ${{ !contains(toJson(github.event.pull_request.labels), []) }}
-      #   uses: actions/github-script@v5
-        # with:
-        #   script: |
-        #     core.setFailed('Label required, failing workflow')
