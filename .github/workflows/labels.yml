@@ -29,9 +29,7 @@ jobs:
 
       - name: Run label checks
         if: steps.getLength.outputs.Label_length == 0
-        with:
-          script: |
-            core.setFailed('Label required, failing workflow')
+        run: core.setFailed('Label required, failing workflow')
 
 
       # # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
