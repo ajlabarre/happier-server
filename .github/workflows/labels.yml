@@ -19,13 +19,13 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: Get label length
-        id: labelLength
+        id: getlength
         env:
           labels: ${{ toJson(github.event.pull_request.labels) }}
         run: |
           echo "$labels"
           LL=$(echo $labels | jq '. | length' )
-          echo "::set-output name=label_length:::$LL"
+          echo "::set-output name=Label_length:::$LL"
 
       - name: Run label checks
         if: steps.getlength.outputs.Label_length == 0
