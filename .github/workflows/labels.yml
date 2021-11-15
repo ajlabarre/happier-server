@@ -25,10 +25,9 @@ jobs:
         run: |
           echo "$labels"
           LL=$(echo $labels | jq '. | length' )
-          echo ":::set-output name=label_length:::$LL"
+          echo "::set-output name=label_length:::$LL"
 
       - name: Run label checks
-        if: steps.getLength.outputs.Label_length == 0
+        if: steps.getlength.outputs.Label_length == 0
         run: |
-          echo "lengthhh $LL"
           core.setFailed('Label required, failing workflow')
