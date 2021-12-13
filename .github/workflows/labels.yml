@@ -28,6 +28,6 @@ jobs:
           echo "::set-output name=Label_length:::$LL"
 
       - name: Run label checks
-        if: ${{ !steps.getlength.outputs.Label_length }}
+        if: ${{ join(github.event.pull_request.labels) == '' }}
         run: |
           core.setFailed('Label required, failing workflow')
