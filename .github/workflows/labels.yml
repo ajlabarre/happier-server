@@ -28,6 +28,6 @@ jobs:
           echo "::set-output name=Label_length:::$LL"
 
       - name: Run label checks
-        if: ${{ steps.getlength.outputs.Label_length }} == 0
+        if: ${{ steps.getlength.outputs.Label_length == 0 }}
         run: |
           core.setFailed('Label required, failing workflow')
